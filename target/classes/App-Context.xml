@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    
+    <!--Setter-->    
+    <bean id="manager1" class="com.mycompany.store.Manager">
+        <property name="name" value="Pedro" />
+        <property name="lastname" value="Lopez" />
+    </bean>
+    <bean id="storeSetter" class="com.mycompany.store.Store">
+        <property name="product" ref="manager1"/>
+    </bean>
+    
+    <!--Constructor-->    
+    <bean id="manager2" class="com.mycompany.store.Manager">
+        <property name="name" value="Rodrigo" />
+        <property name="lastname" value="Lopez" />
+    </bean>
+    <bean id="storeConstructor" class="com.mycompany.store.Store">
+        <constructor-arg ref="manager2"/>
+    </bean>
+    
+</beans>
